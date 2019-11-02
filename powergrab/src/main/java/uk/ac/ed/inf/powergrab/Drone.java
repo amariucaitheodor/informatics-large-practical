@@ -1,19 +1,20 @@
 package uk.ac.ed.inf.powergrab;
 
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Random;
 import java.util.Set;
 
 import com.mapbox.geojson.Feature;
 
-class Drone {
-    private int movesLeft;
-    private double power;
-    private double coins;
-    private Position position;
-    private Queue<Position> trace;
-	
+abstract class Drone {
+    int movesLeft;
+    double power;
+    double coins;
+    Position position;
+    Queue<Position> trace;
+    Random dirGenerator;
+
     double getPower() {
         return power;
     }
@@ -25,25 +26,11 @@ class Drone {
     Position getPosition() {
         return position;
     }
-	
-    Drone(double power, double coins, Position position){
-		movesLeft = 250;
-		trace = new LinkedList<>();
-        trace.add(position);
-		this.power = power;
-		this.coins = coins;
-		this.position = position;
-    }
 
-    void move(Direction dir)
-    {
+    void move(Direction dir) {
 		position = position.nextPosition(dir);
 		power -= Game.MOVEPOWERCOST;
 		movesLeft--;
-
-        if(trace.size()==5)
-            trace.poll();
-        trace.add(position);
     }
 	
     boolean hasMoves()
@@ -65,12 +52,19 @@ class Drone {
         return false;
     }
 
-	void charge(Set<Feature> chosenStations, GameMap gameMap) {
+	void charge(Set<Feature> chosenStations, Map map) {
 		for(Feature chosenStation : chosenStations) 
-        if(!gameMap.getCollectedStations().contains(chosenStation)) {
-        	this.coins += gameMap.getStationCoins(chosenStation);
-        	this.power += gameMap.getStationPower(chosenStation);
+        if(!map.getCollectedStations().contains(chosenStation)) {
+        	this.coins += map.getStationCoins(chosenStation);
+        	this.power += map.getStationPower(chosenStation);
         }
-        gameMap.getCollectedStations().addAll(chosenStations);
+        map.getCollectedStations().addAll(chosenStations);
 	}
+
+    Feature findRandomTarget(Map map) {
+        int stationsNo = map.getAllStations().size();
+        return map.getAllStations().get(dirGenerator.nextInt(stationsNo));
+    }
+
+    abstract Direction chooseMoveDirection(Position currentPos, Map map);
 }

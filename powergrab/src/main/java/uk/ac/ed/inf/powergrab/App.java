@@ -24,8 +24,8 @@ public class App
 
         String mapSource = readFromURL(mapStationsURL);
         FeatureCollection mapStations = FeatureCollection.fromJson(mapSource);
-        
-    	new Game(seed, mapStations, initialDronePos, droneType, year, month, day).play();
+
+        new Game(seed, mapStations, initialDronePos, droneType, year, month, day, false).play();
 
 		//generateResultFiles(false);
     }
@@ -64,19 +64,19 @@ public class App
 				String monthStr = month<10? "0" + month : String.valueOf(month);
 
 				int dayStart = forSubmission? month : 1;
-				int dayEnd = forSubmission? month : 28; //TODO: deal with longer months at http://homepages.inf.ed.ac.uk/stg/powergrab/
+				int dayEnd = forSubmission? month : 28;
 				for(int day = dayStart; day<=dayEnd; day++) {
 					String dayStr = day<10? "0" + day : String.valueOf(day);
 					String mapStationsURL = "http://homepages.inf.ed.ac.uk/stg/powergrab/" + yearStr + "/" + monthStr + "/" + dayStr + "/powergrabmap.geojson";
 					String mapSource = readFromURL(mapStationsURL);
 					double perfectScore = mapPerfectScore(FeatureCollection.fromJson(mapSource));
 
-					Game stateless = new Game(5678, FeatureCollection.fromJson(mapSource), initialDronePos, "stateless", yearStr, monthStr, dayStr);
+					Game stateless = new Game(5678, FeatureCollection.fromJson(mapSource), initialDronePos, "stateless", yearStr, monthStr, dayStr, true);
 					stateless.play();
 					double statelessError = Math.abs(stateless.getGameScore() - perfectScore);
 					statelessErrorSum += statelessError;
 
-					Game stateful = new Game(5678, FeatureCollection.fromJson(mapSource), initialDronePos, "stateful", yearStr, monthStr, dayStr);
+					Game stateful = new Game(5678, FeatureCollection.fromJson(mapSource), initialDronePos, "stateful", yearStr, monthStr, dayStr, true);
 					stateful.play();
 					double statefulError = Math.abs(stateful.getGameScore() - perfectScore);
 					statefulErrorSum += statefulError;

@@ -11,12 +11,12 @@ import com.mapbox.geojson.FeatureCollection;
 import com.mapbox.geojson.LineString;
 import com.mapbox.geojson.Point;
 
-class GameMap {
+class Map {
 	private final List<Feature> mapStations;
     private HashSet<Feature> collectedStations;
     private List<Point> path;
     
-	GameMap(Position initialDronePos, List<Feature> mapStations) {
+	Map(Position initialDronePos, List<Feature> mapStations) {
 	    collectedStations = new HashSet<>();
 		path = new ArrayList<>();
 	    addPositionToPath(initialDronePos);

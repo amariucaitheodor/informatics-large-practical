@@ -1,4 +1,7 @@
-<<<<<<< Updated upstream
+# TODO:
+move methods, vars, enums to right classes: dronetype to drone, maybe choosemovedir too
+write report
+
 ### Build app:
 cd powergrab
 mvn package
@@ -24,4 +27,3 @@ java -jar powergrab-0.0.1-SNAPSHOT.jar 01 01 2019 55.944425 -3.188396 5678 state
 TO TEST CODE QUALITY:
 cd powergrab
 mvn clean verify sonar:sonar
->>>>>>> Stashed changes
