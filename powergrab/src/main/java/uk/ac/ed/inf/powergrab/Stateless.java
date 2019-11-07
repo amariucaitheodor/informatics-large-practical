@@ -6,9 +6,6 @@ import java.util.*;
 
 class Stateless extends Drone {
 
-    // Singleton design pattern to ensure only one drone is used
-    private static Drone instance = null;
-
     static Drone createInstance(Position position, long seed, boolean submissionGeneration) {
         if (instance == null || submissionGeneration)
             instance = new Stateless(250, 0, position, seed);
@@ -23,7 +20,7 @@ class Stateless extends Drone {
         this.dirGenerator = new Random(seed);
     }
 
-    private Direction safeDirection(Set<Direction> safeDirections) {
+    private Direction randomSafeDirection(Set<Direction> safeDirections) {
         Direction choice = Direction.randomDirection(dirGenerator);
         while(!getPosition().nextPosition(choice).inPlayArea() || !safeDirections.contains(choice)) {
             choice = Direction.randomDirection(dirGenerator);
@@ -40,21 +37,14 @@ class Stateless extends Drone {
 
         for (Direction dir : Direction.values())
             if (currentPos.nextPosition(dir).inPlayArea()) {
-                Position nextPosition = currentPos.nextPosition(dir);
-                double nextGain = 0;
                 List<Feature> nextStations = new ArrayList<>();
+                double positionGain = computePositionGain(currentPos.nextPosition(dir), map, nextStations);
 
-                for (Feature station : map.getUncollectedStations())
-                    if (map.arePointsInRange(nextPosition, map.getStationPosition(station))) {
-                        nextGain += map.stationUtility(station);
-                        nextStations.add(station);
-                    }
-
-                if (nextGain >= 0)
+                if (positionGain >= 0)
                     safeDirections.add(dir);
 
-                if (nextGain > maxGain) {
-                    maxGain = nextGain;
+                if (positionGain > maxGain) {
+                    maxGain = positionGain;
                     choice = dir;
                     chosenStations = new HashSet<>(nextStations);
                 }
@@ -65,6 +55,6 @@ class Stateless extends Drone {
         if(maxGain!=0)
             return choice;
         else
-            return safeDirection(safeDirections);
+            return randomSafeDirection(safeDirections);
     }
 }

@@ -53,9 +53,10 @@ public class App
 
     private static void generateResultFiles(boolean forSubmission) throws IOException {
 		Position initialDronePos = new Position(55.944425, -3.188396);
-    	double statelessErrorSum = 0;
-    	double statefulErrorSum = 0;
-    	int mapsTested = 0;
+		int mapsTested = 0;
+        int statefulCollected = 0;
+        int statelessCollected = 0;
+        int totalCollected = 0;
 
     	int yearEnd = forSubmission? 2019 : 2020;
     	for(int year = 2019; year<= yearEnd; year++) {
@@ -70,17 +71,18 @@ public class App
 					String mapStationsURL = "http://homepages.inf.ed.ac.uk/stg/powergrab/" + yearStr + "/" + monthStr + "/" + dayStr + "/powergrabmap.geojson";
 					String mapSource = readFromURL(mapStationsURL);
 					double perfectScore = mapPerfectScore(FeatureCollection.fromJson(mapSource));
+                    totalCollected += perfectScore;
 
 					Game stateless = new Game(5678, FeatureCollection.fromJson(mapSource), initialDronePos, "stateless", yearStr, monthStr, dayStr, true);
 					stateless.play();
-					double statelessError = Math.abs(stateless.getGameScore() - perfectScore);
-					statelessErrorSum += statelessError;
+					statelessCollected+=stateless.getGameScore();
 
 					Game stateful = new Game(5678, FeatureCollection.fromJson(mapSource), initialDronePos, "stateful", yearStr, monthStr, dayStr, true);
 					stateful.play();
 					double statefulError = Math.abs(stateful.getGameScore() - perfectScore);
-					statefulErrorSum += statefulError;
-					if(statefulError > 400)
+					statefulCollected+=stateful.getGameScore();
+
+					if(statefulError > 250)
 						System.out.println("Major stateful error (" + statefulError + ") on " + yearStr + "/" + monthStr + "/" + dayStr);
 
 					Path path = Paths.get(String.format("./%s-%s-%s-%s.txt", "stateful", dayStr, monthStr, yearStr));
@@ -98,7 +100,7 @@ public class App
 			}
 		}
     	System.out.println("Maps tested: " + mapsTested);
-		System.out.println(String.format("Mean error of stateless from perfect score on %s maps: ", forSubmission? "submission" : "all") + (statelessErrorSum/mapsTested));
-		System.out.println(String.format("Mean error of stateful from perfect score on %s maps: ", forSubmission? "submission" : "all") + (statefulErrorSum/mapsTested));
+		System.out.println(String.format("Percentage of coins collected on %s maps, stateful: ", forSubmission? "submission" : "all") + (statefulCollected*100/totalCollected));
+		System.out.println(String.format("Percentage of coins collected on %s maps, stateless: ", forSubmission? "submission" : "all") + (statelessCollected*100/totalCollected));
 	}
 }

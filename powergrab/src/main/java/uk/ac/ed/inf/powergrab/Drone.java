@@ -1,9 +1,6 @@
 package uk.ac.ed.inf.powergrab;
 
-import java.util.HashMap;
-import java.util.Queue;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
 
 import com.mapbox.geojson.Feature;
 
@@ -14,6 +11,9 @@ abstract class Drone {
     Position position;
     Queue<Position> trace;
     Random dirGenerator;
+
+    // Singleton design pattern to ensure only one drone is used
+    static Drone instance = null;
 
     double getPower() {
         return power;
@@ -67,4 +67,14 @@ abstract class Drone {
     }
 
     abstract Direction chooseMoveDirection(Position currentPos, Map map);
+
+    double computePositionGain(Position position, Map map, List<Feature> nextStations) {
+        double nextGain = 0;
+        for (Feature station : map.getUncollectedStations())
+            if (map.arePointsInRange(position, map.getStationPosition(station))) {
+                nextGain += map.stationUtility(station);
+                nextStations.add(station);
+            }
+        return nextGain;
+    }
 }
