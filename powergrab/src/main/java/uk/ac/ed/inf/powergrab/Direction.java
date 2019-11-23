@@ -21,13 +21,12 @@ public enum Direction {
     W,
     WNW,
     NW,
-    NNW
-    ;
+    NNW;
 
     private static final List<Direction> VALUES = Collections.unmodifiableList(Arrays.asList(values()));
     private static final int SIZE = VALUES.size();
 
-    public static Direction randomDirection(Random dirGenerator)  {
-      return VALUES.get(dirGenerator.nextInt(SIZE));
+    public static Direction randomDirection(Random dirGenerator) {
+        return VALUES.get(dirGenerator.nextInt(SIZE));
     }
 }

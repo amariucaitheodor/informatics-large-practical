@@ -16,27 +16,21 @@ public class DroneTest {
     public void init() {
     	Game.precomputeMovementShift();
     }
-	
-    @Test
-	public void testDroneConstructor() {
-        assertNotNull(Stateless.createInstance(new Position(55.944425, -3.188396), 5678, false));
-        assertNotNull(Stateful.createInstance(new Position(55.944425, -3.188396), 5678, false));
-	}
 
     @Test
     public void testOnlyOneDroneInstance() {
-        Drone statefulDrone = Stateful.createInstance(new Position(55.944425, -3.188396), 5678, false);
-        Drone statefulDrone1 = Stateful.createInstance(new Position(55.944425, -3.188396), 5678, false);
-        assertEquals(statefulDrone1, statefulDrone);
-        assertEquals(statefulDrone1, Stateful.createInstance(new Position(55.944425, -3.188396), 5678, false));
+        Drone drone1 = Stateless.createInstance(new Position(55.944425, -3.188396), 5678, false);
+        Drone drone2 = Stateless.createInstance(new Position(55.944425, -3.188396), 5678, false);
+        assertEquals(drone1, drone2);
+        assertEquals(drone2, Stateless.createInstance(new Position(55.944425, -3.188396), 5678, false));
     }
     
     @Test
 	public void testRunOutOfPower() {
 		Random dirGenerator = new Random();
     	// Initialize drone with 50 power because this is a rare event that a drone runs out of power
-    	Drone testDrone = Stateful.createInstance(new Position(55.944425, -3.188396), 5678, false);
-    	while(testDrone.hasMoves() && testDrone.hasPower())
+    	Drone testDrone = Stateless.createInstance(new Position(55.944425, -3.188396), 5678, false);
+    	while(testDrone.hasMovesLeft() && testDrone.hasPower())
         {
             Direction dir = Direction.randomDirection(dirGenerator);
             while(!testDrone.getPosition().nextPosition(dir).inPlayArea()) {
@@ -45,6 +39,6 @@ public class DroneTest {
             testDrone.move(dir);
         }
 		assertFalse(testDrone.hasPower());
-		assertTrue(testDrone.hasMoves());
+		assertTrue(testDrone.hasMovesLeft());
 	}
 }
