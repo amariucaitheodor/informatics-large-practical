@@ -5,8 +5,12 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/ed/inf/powergrab/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/ed/inf/powergrab/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/ed/inf/powergrab/Drone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/ed/inf/powergrab/Drone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/ed/inf/powergrab/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/ed/inf/powergrab/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/ed/inf/powergrab/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/ed/inf/powergrab/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/ed/inf/powergrab/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/ed/inf/powergrab/Position.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/ed/inf/powergrab/Stateful.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/ed/inf/powergrab/Stateful.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/ed/inf/powergrab/Stateless.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/ed/inf/powergrab/Stateless.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uk/ac/ed/inf/powergrab/PositionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uk/ac/ed/inf/powergrab/PositionTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,6 +69,7 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RunDashboard">
@@ -83,7 +88,7 @@
     <configuration name="powergrab" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="uk.ac.ed.inf.powergrab.App" />
       <module name="powergrab" />
-      <option name="PROGRAM_PARAMETERS" value="01 12 2020 55.944425 -3.188396 5678 stateful" />
+      <option name="PROGRAM_PARAMETERS" value="01 07 2019 55.944425 -3.188396 5678 stateful" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -151,6 +156,9 @@
       <workItem from="1572726044696" duration="8309000" />
       <workItem from="1572896410334" duration="1812000" />
       <workItem from="1572899509063" duration="2424000" />
+      <workItem from="1573649653727" duration="2752000" />
+      <workItem from="1574445529243" duration="11186000" />
+      <workItem from="1574503579695" duration="1243000" />
     </task>
     <servers />
   </component>

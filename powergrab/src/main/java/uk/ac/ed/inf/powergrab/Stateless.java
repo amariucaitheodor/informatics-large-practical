@@ -1,21 +1,19 @@
 package uk.ac.ed.inf.powergrab;
 
-import com.mapbox.geojson.Feature;
-
 import java.util.*;
 
 class Stateless extends Drone {
 
     static Drone createInstance(Position position, long seed, boolean submissionGeneration) {
         if (instance == null || submissionGeneration)
-            instance = new Stateless(250, 0, position, seed);
+            instance = new Stateless(position, seed);
         return instance;
     }
 
-    private Stateless(double power, double coins, Position position, long seed){
+    private Stateless(Position position, long seed){
         movesLeft = 250;
-        this.power = power;
-        this.coins = coins;
+        this.power = 250;
+        this.coins = 0;
         this.position = position;
         this.dirGenerator = new Random(seed);
     }
@@ -31,13 +29,13 @@ class Stateless extends Drone {
     Direction chooseMoveDirection(Position currentPos, Map map) {
         Direction choice = null;
         double maxGain = Integer.MIN_VALUE;
-        Set<Feature> chosenStations = new HashSet<>();
+        Set<Station> chosenStations = new HashSet<>();
 
         Set<Direction> safeDirections = new HashSet<>();
 
         for (Direction dir : Direction.values())
             if (currentPos.nextPosition(dir).inPlayArea()) {
-                List<Feature> nextStations = new ArrayList<>();
+                List<Station> nextStations = new ArrayList<>();
                 double positionGain = computePositionGain(currentPos.nextPosition(dir), map, nextStations);
 
                 if (positionGain >= 0)

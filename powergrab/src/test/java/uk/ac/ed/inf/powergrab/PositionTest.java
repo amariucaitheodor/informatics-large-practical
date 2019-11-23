@@ -1,11 +1,10 @@
 package uk.ac.ed.inf.powergrab;
 
 import org.junit.Test;
-import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 
-import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.*;
 
 /**
  * Unit test for PowerGrab App, Position class.  [JUnit 4 version]
@@ -19,19 +18,19 @@ public class PositionTest {
 	
     @Test
 	public void testPositionConstructor() {
-		assertTrue( new Position(55.944425, -3.188396) != null );
+		assertNotNull(new Position(55.944425, -3.188396));
 	}
 
-	final Position p0 = new Position(55.944425, -3.188396);
+	private final Position p0 = new Position(55.944425, -3.188396);
 
     @Test
 	public void testPositionLatitude() {
-		assertTrue(p0.latitude == 55.944425);
+		assertEquals(55.944425, p0.latitude, 0.0);
 	}
 
     @Test
 	public void testPositionLongitude() {
-		assertTrue(p0.longitude == -3.188396);
+		assertEquals(p0.longitude, -3.188396, 0.0);
 	}
 	
     @Test
@@ -58,12 +57,12 @@ public class PositionTest {
         }
 	
     
-	boolean approxEq(double d0, double d1) {
+	private boolean approxEq(double d0, double d1) {
 		final double epsilon = 1.0E-12d;
 		return Math.abs(d0 - d1) < epsilon;
 	}
 	
-	boolean approxEq(Position p0, Position p1) {
+	private boolean approxEq(Position p0, Position p1) {
 		return approxEq(p0.latitude, p1.latitude) && approxEq(p0.longitude, p1.longitude); 
 	}
 	

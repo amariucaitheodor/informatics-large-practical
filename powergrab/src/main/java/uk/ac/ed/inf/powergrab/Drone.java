@@ -2,14 +2,11 @@ package uk.ac.ed.inf.powergrab;
 
 import java.util.*;
 
-import com.mapbox.geojson.Feature;
-
 abstract class Drone {
     int movesLeft;
     double power;
     double coins;
     Position position;
-    Queue<Position> trace;
     Random dirGenerator;
 
     // Singleton design pattern to ensure only one drone is used
@@ -43,35 +40,21 @@ abstract class Drone {
         return power >= 1.25;
     }
 
-    boolean isStuck() {
-        HashMap<String, Integer> occurrences = new HashMap<>();
-        trace.forEach(pos -> occurrences.put(pos.toString(), occurrences.getOrDefault(pos.toString(), 0) + 1));
-        for(int occurrence : occurrences.values())
-            if(occurrence==3)
-                return true;
-        return false;
-    }
-
-	void charge(Set<Feature> chosenStations, Map map) {
-		for(Feature chosenStation : chosenStations) 
+	void charge(Set<Station> chosenStations, Map map) {
+		for(Station chosenStation : chosenStations)
         if(!map.getCollectedStations().contains(chosenStation)) {
-        	this.coins += map.getStationCoins(chosenStation);
-        	this.power += map.getStationPower(chosenStation);
+        	this.coins += chosenStation.getCoins();
+        	this.power += chosenStation.getPower();
         }
         map.getCollectedStations().addAll(chosenStations);
 	}
 
-    Feature findRandomTarget(Map map) {
-        int stationsNo = map.getAllStations().size();
-        return map.getAllStations().get(dirGenerator.nextInt(stationsNo));
-    }
-
     abstract Direction chooseMoveDirection(Position currentPos, Map map);
 
-    double computePositionGain(Position position, Map map, List<Feature> nextStations) {
+    double computePositionGain(Position position, Map map, List<Station> nextStations) {
         double nextGain = 0;
-        for (Feature station : map.getUncollectedStations())
-            if (map.arePointsInRange(position, map.getStationPosition(station))) {
+        for (Station station : map.getUncollectedStations())
+            if (map.arePointsInRange(position, station.getPosition())) {
                 nextGain += map.stationUtility(station);
                 nextStations.add(station);
             }

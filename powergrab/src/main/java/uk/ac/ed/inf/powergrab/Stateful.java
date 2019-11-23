@@ -1,23 +1,22 @@
 package uk.ac.ed.inf.powergrab;
 
-import com.mapbox.geojson.Feature;
-
 import java.util.*;
 
 class Stateful extends Drone {
+    private Queue<Position> trace;
 
     static Drone createInstance(Position position, long seed, boolean submissionGeneration) {
         if (instance == null || submissionGeneration)
-            instance = new Stateful(250, 0, position, seed);
+            instance = new Stateful(position, seed);
         return instance;
     }
 
-    private Stateful(double power, double coins, Position position, long seed){
+    private Stateful(Position position, long seed){
         movesLeft = 250;
         trace = new LinkedList<>();
         trace.add(position);
-        this.power = power;
-        this.coins = coins;
+        this.power = 250;
+        this.coins = 0;
         this.position = position;
         this.dirGenerator = new Random(seed);
     }
@@ -30,34 +29,50 @@ class Stateful extends Drone {
         trace.add(position);
     }
 
-    private Feature target;
+    private Station target;
 
-    private Feature closestStation(Position currentPos, Map map) {
-        if(map.getPositiveUncollectedStations().isEmpty())
-            return findRandomTarget(map); // with no positive uncollected stations left, game is over and target does not matter
-
-        return Collections.max(map.getPositiveUncollectedStations(), Comparator.comparingDouble(a -> map.proximityBetweenPoints(map.getStationPosition(a), currentPos)));
+    private Station chooseRandomTarget(Map map) {
+        int stationsNo = map.getAllStations().size();
+        return map.getAllStations().get(dirGenerator.nextInt(stationsNo));
     }
 
-    private Position getTargetPosition(Position currentPos, Map map) {
+    private boolean isStuck() {
+        HashMap<String, Integer> occurrences = new HashMap<>();
+        trace.forEach(pos -> occurrences.put(pos.toString(), occurrences.getOrDefault(pos.toString(), 0) + 1));
+        for(int occurrence : occurrences.values())
+            if(occurrence==3)
+                return true;
+        return false;
+    }
+
+    private Station closestStation(Position currentPos, Map map) {
+        // with no positive uncollected stations left, game is over and target does not matter
+        // note: negative stations will never be collected
+        if(map.getPositiveUncollectedStations().isEmpty())
+            return chooseRandomTarget(map);
+
+        return Collections.min(map.getPositiveUncollectedStations(), Comparator.comparingDouble(a -> map.distanceBetweenPoints(a.getPosition(), currentPos)));
+    }
+
+    private Position chooseTargetReturnPosition(Position currentPos, Map map) {
         if(isStuck())
-            target = findRandomTarget(map);
+            target = chooseRandomTarget(map);
         if(target==null)
             target = closestStation(currentPos, map);
         Position targetPos;
         if(map.getCollectedStations().contains(target))
-            targetPos = map.getStationPosition(closestStation(currentPos, map));
+            targetPos = closestStation(currentPos, map).getPosition();
         else
-            targetPos = map.getStationPosition(target);
+            targetPos = target.getPosition();
         return targetPos;
     }
 
     private Direction closestSafeDirection(EnumMap<Direction, Double> safeDirectionsStateful) {
-        double proximity = Integer.MIN_VALUE;
+        double distance = Integer.MAX_VALUE;
         Direction closestDirection = null;
         for(java.util.Map.Entry<Direction, Double> safeDir : safeDirectionsStateful.entrySet())
-            if(safeDir.getValue()>proximity) {
-                proximity = safeDir.getValue();
+            if(safeDir.getValue()<distance) {
+                distance = safeDir.getValue();
                 closestDirection = safeDir.getKey();
             }
         return closestDirection;
@@ -66,19 +81,19 @@ class Stateful extends Drone {
     Direction chooseMoveDirection(Position currentPos, Map map) {
         Direction choice = null;
         double maxGain = Integer.MIN_VALUE;
-        Set<Feature> chosenStations = new HashSet<>();
+        Set<Station> chosenStations = new HashSet<>();
 
         EnumMap<Direction, Double> safeDirectionsStateful = new EnumMap<>(Direction.class);
-        Position targetPos = getTargetPosition(currentPos, map);
+        Position targetPos = chooseTargetReturnPosition(currentPos, map);
 
         for (Direction dir : Direction.values())
             if (currentPos.nextPosition(dir).inPlayArea()) {
                 Position nextPosition = currentPos.nextPosition(dir);
-                List<Feature> nextStations = new ArrayList<>();
+                List<Station> nextStations = new ArrayList<>();
                 double positionGain = computePositionGain(nextPosition, map, nextStations);
 
                 if (positionGain >= 0)
-                    safeDirectionsStateful.put(dir, map.proximityBetweenPoints(nextPosition, targetPos));
+                    safeDirectionsStateful.put(dir, map.distanceBetweenPoints(nextPosition, targetPos));
 
                 if (positionGain > maxGain) {
                     maxGain = positionGain;

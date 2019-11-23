@@ -1,0 +1,1059 @@
+
+{
+  "type": "FeatureCollection",
+  "date-generated": "Wed Jul 03 2019",
+  "features": [
+  
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "e473-1ea1-ef42-414b-ba67-470c",
+        "coins": "38.93049362124595",
+        "power": "57.219641688088515",
+        "marker-symbol": "lighthouse",
+        "marker-color": "#006000"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.185103189116004,
+          55.94411148827932
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "1b1a-1aa6-4748-d5a7-106d-660a",
+        "coins": "-107.56382836814963",
+        "power": "-32.405957908408666",
+        "marker-symbol": "danger",
+        "marker-color": "#8c0000"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.1854434801128213,
+          55.94289961116779
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "ae09-5407-5502-b592-662e-210f",
+        "coins": "114.24966505477171",
+        "power": "29.142481305092144",
+        "marker-symbol": "lighthouse",
+        "marker-color": "#008f00"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.188988847119291,
+          55.943470440084766
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "88e0-ca60-f2c9-b466-43dd-1dda",
+        "coins": "-63.73981853630774",
+        "power": "-102.98402388725839",
+        "marker-symbol": "danger",
+        "marker-color": "#a70000"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.191214063325701,
+          55.94282499755564
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "0ec0-6bfa-271e-14f3-ad2b-c926",
+        "coins": "-73.11466493168754",
+        "power": "-78.14034518553856",
+        "marker-symbol": "danger",
+        "marker-color": "#970000"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.1848958872957946,
+          55.943166826944406
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "da66-3212-5ee9-adb7-7fbb-2c73",
+        "coins": "13.400877856872718",
+        "power": "97.72750197808679",
+        "marker-symbol": "lighthouse",
+        "marker-color": "#006f00"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.19075798218629,
+          55.94271505351221
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "8ef7-70e7-e83a-6317-7b03-6e8a",
+        "coins": "64.57239577570407",
+        "power": "79.19005592072648",
+        "marker-symbol": "lighthouse",
+        "marker-color": "#009000"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.1869912418015094,
+          55.94344761940203
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "a518-dacb-27bb-ca58-f826-8541",
+        "coins": "67.25246627120316",
+        "power": "11.509324601880644",
+        "marker-symbol": "lighthouse",
+        "marker-color": "#004f00"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.1879276046048814,
+          55.94614228605809
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "8404-bbf5-2ea1-b668-a961-386d",
+        "coins": "9.187427248599015",
+        "power": "3.2199128637161456",
+        "marker-symbol": "lighthouse",
+        "marker-color": "#000c00"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.1882084791247203,
+          55.94423561061052
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "d859-49c6-0684-850f-faf2-c10d",
+        "coins": "16.49312007171981",
+        "power": "96.22054844858091",
+        "marker-symbol": "lighthouse",
+        "marker-color": "#007100"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.1855079883311213,
+          55.94522695396028
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "c3f4-6b38-663a-e9ef-3a98-92a0",
+        "coins": "120.8843073168897",
+        "power": "124.72081346452488",
+        "marker-symbol": "lighthouse",
+        "marker-color": "#00f600"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.1888361871242035,
+          55.944890128319734
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "16bb-d34f-b8c4-62f5-5d3e-281e",
+        "coins": "115.54338024721278",
+        "power": "47.28034478389791",
+        "marker-symbol": "lighthouse",
+        "marker-color": "#00a300"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.186096472847194,
+          55.9427126313214
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "f5bb-240e-b8ad-d37d-1a52-c93e",
+        "coins": "93.14795410943792",
+        "power": "95.62277759505933",
+        "marker-symbol": "lighthouse",
+        "marker-color": "#00bd00"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.184358077925408,
+          55.94525572042168
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "05f1-37e2-a84d-cce1-c301-c56c",
+        "coins": "123.0484141434755",
+        "power": "91.00379342203338",
+        "marker-symbol": "lighthouse",
+        "marker-color": "#00d600"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.1870704909832597,
+          55.94564368217402
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "0281-e00a-911b-9b0f-0afe-3300",
+        "coins": "64.50152795822193",
+        "power": "92.18104949856674",
+        "marker-symbol": "lighthouse",
+        "marker-color": "#009d00"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.188375190492185,
+          55.943867327293546
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "0ed5-b86d-ff07-6766-bb8f-310a",
+        "coins": "56.17546744355262",
+        "power": "0.6083018916522714",
+        "marker-symbol": "lighthouse",
+        "marker-color": "#003900"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.1876499910567633,
+          55.945100866532556
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "f816-7790-581e-25db-91ba-01fa",
+        "coins": "73.17046043060432",
+        "power": "36.77905563178112",
+        "marker-symbol": "lighthouse",
+        "marker-color": "#006e00"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.1857874850534413,
+          55.9457455206638
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "3d59-56e5-0251-673b-ced6-1125",
+        "coins": "-97.42035543463268",
+        "power": "-32.183784887245395",
+        "marker-symbol": "danger",
+        "marker-color": "#820000"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.1850501449331827,
+          55.94593343356202
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "7a22-76ab-4358-47da-fa25-9f5a",
+        "coins": "89.06800041026197",
+        "power": "47.52488365637014",
+        "marker-symbol": "lighthouse",
+        "marker-color": "#008900"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.1918654466800866,
+          55.94588180298658
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "f906-cc69-cb6e-5172-4be3-f6aa",
+        "coins": "78.58939213224674",
+        "power": "44.121099646834345",
+        "marker-symbol": "lighthouse",
+        "marker-color": "#007b00"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.188815925662891,
+          55.94438298562605
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "0a64-7eef-aa68-9015-07cf-d72b",
+        "coins": "91.96444882152672",
+        "power": "30.871446071862707",
+        "marker-symbol": "lighthouse",
+        "marker-color": "#007b00"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.188423687317159,
+          55.94576107426595
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "94cc-f9fc-af5c-6a58-3fdf-bbc7",
+        "coins": "-35.91754178436088",
+        "power": "-81.20515709860642",
+        "marker-symbol": "danger",
+        "marker-color": "#750000"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.1878233056198253,
+          55.945060452291266
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "72e4-2c31-1841-e64b-82cb-b10c",
+        "coins": "8.363468774545135",
+        "power": "34.344801006434",
+        "marker-symbol": "lighthouse",
+        "marker-color": "#002b00"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.1852247956237436,
+          55.94487698497094
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "2ad9-7c3a-4ae4-560d-ac77-5b5f",
+        "coins": "-78.70505334711385",
+        "power": "-74.63238392267459",
+        "marker-symbol": "danger",
+        "marker-color": "#990000"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.189602745684877,
+          55.9451929012589
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "528c-fc19-2281-1449-2dcd-a9ca",
+        "coins": "7.69003611730297",
+        "power": "117.73449199813808",
+        "marker-symbol": "lighthouse",
+        "marker-color": "#007d00"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.1904195570520897,
+          55.945155839011456
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "171b-a186-0540-6c16-4be3-4e52",
+        "coins": "75.4885952857141",
+        "power": "107.61456922599676",
+        "marker-symbol": "lighthouse",
+        "marker-color": "#00b700"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.1899450826108224,
+          55.94431395868604
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "53b5-b34f-ddcc-896a-3a12-8185",
+        "coins": "77.64675459834812",
+        "power": "85.40401172736678",
+        "marker-symbol": "lighthouse",
+        "marker-color": "#00a300"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.190799093395807,
+          55.945907372845284
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "8a10-809d-d8cd-37a6-d452-3e7b",
+        "coins": "94.55358619466348",
+        "power": "121.1111573823737",
+        "marker-symbol": "lighthouse",
+        "marker-color": "#00d800"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.186376361277037,
+          55.943209121776974
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "7431-6596-6ccb-5349-d1d0-bd36",
+        "coins": "-95.48875237839863",
+        "power": "-105.11046450500703",
+        "marker-symbol": "danger",
+        "marker-color": "#c90000"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.1858379512413117,
+          55.94293046985832
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "3c70-dede-27a8-7bb8-b8a1-c109",
+        "coins": "4.666808220301369",
+        "power": "6.663968311950833",
+        "marker-symbol": "lighthouse",
+        "marker-color": "#000b00"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.190971250764132,
+          55.94375376634902
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "9b63-d53a-dee8-3b29-023f-9e09",
+        "coins": "33.964386086568986",
+        "power": "121.1121315200901",
+        "marker-symbol": "lighthouse",
+        "marker-color": "#009b00"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.188703293742163,
+          55.94577593152663
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "9b0b-d92a-c8ac-286d-d983-7999",
+        "coins": "15.91479443502411",
+        "power": "24.31561002919655",
+        "marker-symbol": "lighthouse",
+        "marker-color": "#002800"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.1860002193599812,
+          55.94289471793564
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "14f2-36da-39e6-36e2-ca4e-deff",
+        "coins": "116.68113037550118",
+        "power": "1.185019182065511",
+        "marker-symbol": "lighthouse",
+        "marker-color": "#007600"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.186907017208015,
+          55.94442872247891
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "cf76-0af0-a0c2-24ca-d28a-b25d",
+        "coins": "51.54094445790701",
+        "power": "93.59712719263531",
+        "marker-symbol": "lighthouse",
+        "marker-color": "#009100"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.1871056437249856,
+          55.94469529940445
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "2eac-136b-d5fa-c177-0a1d-fcd3",
+        "coins": "48.85114835337529",
+        "power": "47.68370078265724",
+        "marker-symbol": "lighthouse",
+        "marker-color": "#006100"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.184812666167909,
+          55.94361561498128
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "6332-f977-8a71-a53f-08c1-a0b4",
+        "coins": "65.91859106604892",
+        "power": "47.48518385080934",
+        "marker-symbol": "lighthouse",
+        "marker-color": "#007100"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.1865861007016525,
+          55.94279553915349
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "cdf2-9061-b1ef-1b55-2014-4ef2",
+        "coins": "21.843598577306224",
+        "power": "35.13237170185761",
+        "marker-symbol": "lighthouse",
+        "marker-color": "#003900"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.188838344558433,
+          55.94581844927211
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "69dd-1a12-3ee9-e5f9-8bd1-bb2c",
+        "coins": "-29.462891089657425",
+        "power": "-61.665858931750904",
+        "marker-symbol": "danger",
+        "marker-color": "#5b0000"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.185979446320289,
+          55.94335627900264
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "40fa-ff1d-f504-154c-72db-6eb2",
+        "coins": "68.4361336557458",
+        "power": "118.92404313800938",
+        "marker-symbol": "lighthouse",
+        "marker-color": "#00bb00"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.184953006788175,
+          55.94507353493149
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "0a95-6cae-0327-4613-0dce-d4d8",
+        "coins": "54.53323115454717",
+        "power": "108.0769386421787",
+        "marker-symbol": "lighthouse",
+        "marker-color": "#00a300"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.190758152642795,
+          55.944428467638495
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "eea3-ea5c-77f2-90cd-0b79-f419",
+        "coins": "-82.14341149623058",
+        "power": "-52.07711228797682",
+        "marker-symbol": "danger",
+        "marker-color": "#860000"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.188958929215725,
+          55.94532430688283
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "73d5-4057-e9ef-c3e8-fc6f-845e",
+        "coins": "-102.70996413459616",
+        "power": "-118.56459418964477",
+        "marker-symbol": "danger",
+        "marker-color": "#dd0000"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.189302452313235,
+          55.94359469935263
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "be04-d1e8-0c21-a564-b75d-55dc",
+        "coins": "106.71509256126706",
+        "power": "1.148314663860242",
+        "marker-symbol": "lighthouse",
+        "marker-color": "#006c00"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.188556617728604,
+          55.945471861303204
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "d0e1-7b1a-eb07-5f6b-4433-aac8",
+        "coins": "53.37900704036594",
+        "power": "59.993928350592086",
+        "marker-symbol": "lighthouse",
+        "marker-color": "#007100"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.190762505768326,
+          55.94591822415316
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "e5fb-c3ef-a250-f35a-56d4-62ef",
+        "coins": "46.102998987376075",
+        "power": "104.3406330625881",
+        "marker-symbol": "lighthouse",
+        "marker-color": "#009600"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.189815083769933,
+          55.94491991382988
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "c4f3-401b-5650-c11b-790f-40d4",
+        "coins": "28.199162311465837",
+        "power": "119.48580131940045",
+        "marker-symbol": "lighthouse",
+        "marker-color": "#009400"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.1865496614818203,
+          55.94472494756647
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "ba68-1d19-228f-5ffa-e777-6d55",
+        "coins": "51.800679781084256",
+        "power": "116.17101583601087",
+        "marker-symbol": "lighthouse",
+        "marker-color": "#00a800"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.1887091913653562,
+          55.943753070535955
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "c5c6-0ede-8059-39fa-439f-a142",
+        "coins": "9.849888067290271",
+        "power": "74.01316537469059",
+        "marker-symbol": "lighthouse",
+        "marker-color": "#005400"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.191218053501846,
+          55.94499873574849
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "36b1-0268-43d9-3e70-3e99-decd",
+        "coins": "96.83871610628358",
+        "power": "85.5451095105294",
+        "marker-symbol": "lighthouse",
+        "marker-color": "#00b600"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.1899893820460266,
+          55.944944262864475
+        ]
+      }
+
+    },
+        
+    {
+      "type": "Feature",
+      
+      "properties": {
+        "id": "061d-f6e9-c4eb-f7b3-5547-dcff",
+        "coins": "-83.56425053418367",
+        "power": "-11.53076036823339",
+        "marker-symbol": "danger",
+        "marker-color": "#5f0000"
+      },
+      
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.1858409988447622,
+          55.945226198035556
+        ]
+      }
+
+    }
+        
+   ]
+}
+        
