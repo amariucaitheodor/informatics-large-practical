@@ -1,7 +1,6 @@
 package uk.ac.ed.inf.powergrab;
 
 import java.util.Random;
-import java.util.Set;
 
 abstract class Drone {
     // Singleton design pattern to ensure only one drone is used
@@ -38,13 +37,14 @@ abstract class Drone {
         return power >= 1.25;
     }
 
-    void charge(Set<Station> chosenStations, Map map) {
-        for (Station chosenStation : chosenStations)
-            if (!map.getCollectedStations().contains(chosenStation)) {
-                this.coins += chosenStation.getCoins();
-                this.power += chosenStation.getPower();
-            }
-        map.getCollectedStations().addAll(chosenStations);
+    void chargeFromStation(Station chosenStation, Map map) {
+        if (map.getCollectedStations().contains(chosenStation))
+            return;
+
+        this.coins += chosenStation.getCoins();
+        this.power += chosenStation.getPower();
+        chosenStation.deplete();
+        map.getCollectedStations().add(chosenStation);
     }
 
     abstract Direction chooseMoveDirection(Position currentPos, Map map);

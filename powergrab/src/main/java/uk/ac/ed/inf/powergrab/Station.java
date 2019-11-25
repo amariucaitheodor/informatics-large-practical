@@ -6,8 +6,8 @@ import com.mapbox.geojson.Point;
 import java.util.List;
 
 class Station {
-    private final double coins;
-    private final double power;
+    private double coins;
+    private double power;
     private Position position;
 
     Station(Feature station) {
@@ -28,7 +28,12 @@ class Station {
         return power;
     }
 
-    public Position getPosition() {
+    Position getPosition() {
         return position;
+    }
+
+    void deplete() {
+        coins = 0;
+        power = 0;
     }
 }

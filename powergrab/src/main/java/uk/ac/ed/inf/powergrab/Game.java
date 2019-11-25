@@ -113,6 +113,6 @@ class Game {
         if (drone.hasMovesLeft())
             throw new java.lang.IllegalArgumentException("Game score requested before the game has finished!");
 
-    	return drone.getCoins();
+        return drone.getCoins();
     }
 }

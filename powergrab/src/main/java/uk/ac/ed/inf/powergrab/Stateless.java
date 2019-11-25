@@ -1,6 +1,8 @@
 package uk.ac.ed.inf.powergrab;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Random;
+import java.util.Set;
 
 class Stateless extends Drone {
 
@@ -29,44 +31,46 @@ class Stateless extends Drone {
     Direction chooseMoveDirection(Position currentPos, Map map) {
         Direction choice = null;
         double maxGain = Integer.MIN_VALUE;
-        Set<Station> chosenStations = new HashSet<>();
-
+        Station chosenStation = null;
         Set<Direction> safeDirections = new HashSet<>();
 
         for (Direction dir : Direction.values())
             if (currentPos.nextPosition(dir).inPlayArea()) {
-                List<Station> nextStations = new ArrayList<>();
-                double positionGain = computePositionGain(currentPos.nextPosition(dir), map, nextStations);
+                Position futurePosition = currentPos.nextPosition(dir);
 
-                // any direction where we gain coins is a safe direction
-                if (positionGain >= 0)
+                // calculate utility sum of nearest station to future position
+                double directionUtilityGain = 0;
+                Station nearestStation = null;
+                double distanceToNearestStation = Integer.MAX_VALUE;
+
+                for (Station station : map.getAllStations()) {
+                    double distToStation = map.distanceBetweenPoints(futurePosition, station.getPosition());
+                    if (map.arePointsInRange(futurePosition, station.getPosition()) &&
+                            distToStation < distanceToNearestStation) {
+                        nearestStation = station;
+                        distanceToNearestStation = distToStation;
+                        directionUtilityGain = map.stationUtility(station);
+                    }
+                }
+
+                // any direction where we don't lose coins is a safe direction
+                if (directionUtilityGain >= 0)
                     safeDirections.add(dir);
 
                 // keep track of maximum coin profit
-                if (positionGain > maxGain) {
-                    maxGain = positionGain;
+                if (directionUtilityGain > maxGain) {
+                    maxGain = directionUtilityGain;
                     choice = dir;
-                    chosenStations = new HashSet<>(nextStations);
+                    chosenStation = nearestStation;
                 }
             }
 
-        if(safeDirections.isEmpty() || maxGain > 0) {
-            charge(chosenStations, map);
-            return choice;
-        }
-
         // all directions are neutral
-        return randomSafeDirection(safeDirections);
-    }
+        if (maxGain == 0)
+            return randomSafeDirection(safeDirections);
 
-    // calculate utility sum of all station within this position
-    private double computePositionGain(Position position, Map map, List<Station> nextStations) {
-        double nextGain = 0;
-        for (Station station : map.getUncollectedStations())
-            if (map.arePointsInRange(position, station.getPosition())) {
-                nextGain += map.stationUtility(station);
-                nextStations.add(station);
-            }
-        return nextGain;
+        assert chosenStation != null;
+        chargeFromStation(chosenStation, map);
+        return choice;
     }
 }

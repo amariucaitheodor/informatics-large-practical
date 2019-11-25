@@ -57,7 +57,7 @@ class Stateful extends Drone {
                 Comparator.comparingDouble(a -> map.distanceBetweenPoints(a.getPosition(), currentPos)));
     }
 
-    private Position newTargetPosition(Position currentPos, Map map) {
+    private Position assessTargetPosition(Position currentPos, Map map) {
         // with no positive uncollected stations left, game is over and target does not matter
         if (map.getPositiveUncollectedStations().isEmpty())
             return map.getAllStations().get(0).getPosition();
@@ -72,15 +72,13 @@ class Stateful extends Drone {
             return target.getPosition();
     }
 
-    private Direction closestSafeDirection(EnumMap<Direction, DirectionOption> safeDirectionsStateful,
-                                           boolean idealDirections) {
+    private Direction closestSafeDirection(EnumMap<Direction, Double> safeDirectionsStateful) {
         double distance = Integer.MAX_VALUE;
         Direction closestDirection = null;
         // go through all safe directions and choose the closest one based on distance to target (stored in HashMap)
-        // if 'idealDirections' flag is true, then only consider such directions
-        for (java.util.Map.Entry<Direction, DirectionOption> safeDir : safeDirectionsStateful.entrySet())
-            if (safeDir.getValue().distance < distance && (!idealDirections || safeDir.getValue().isIdeal)) {
-                distance = safeDir.getValue().distance;
+        for (java.util.Map.Entry<Direction, Double> safeDir : safeDirectionsStateful.entrySet())
+            if (safeDir.getValue() < distance) {
+                distance = safeDir.getValue();
                 closestDirection = safeDir.getKey();
             }
         return closestDirection;
@@ -89,77 +87,47 @@ class Stateful extends Drone {
     Direction chooseMoveDirection(Position currentPos, Map map) {
         Direction choice = null;
         double maxGain = Integer.MIN_VALUE;
-        Set<Station> chosenStations = new HashSet<>();
-
-        EnumMap<Direction, DirectionOption> safeDirectionsStateful = new EnumMap<>(Direction.class);
-        Position targetPos = newTargetPosition(currentPos, map);
+        Station chosenStation = null;
+        EnumMap<Direction, Double> safeDirectionsStateful = new EnumMap<>(Direction.class);
+        Position targetPos = assessTargetPosition(currentPos, map);
 
         for (Direction dir : Direction.values())
             if (currentPos.nextPosition(dir).inPlayArea()) {
                 Position nextPosition = currentPos.nextPosition(dir);
-                List<Station> nextStations = new ArrayList<>();
 
-                // calculate utility for this direction, and take note if any negative stations are charged from
+                // calculate utility sum of nearest station to future position
                 double directionUtilityGain = 0;
-                boolean idealDirection = true;
-                List<Station> uncollectedStations = map.getUncollectedStations();
-                for (Station station : uncollectedStations)
-                    if (map.arePointsInRange(nextPosition, station.getPosition())) {
-                        directionUtilityGain += map.stationUtility(station);
-                        if (map.stationUtility(station) < 0)
-                            idealDirection = false;
-                        nextStations.add(station);
+                Station nearestStation = null;
+                double distanceToNearestStation = Integer.MAX_VALUE;
+
+                for (Station station : map.getAllStations()) {
+                    double distToStation = map.distanceBetweenPoints(nextPosition, station.getPosition());
+                    if (map.arePointsInRange(nextPosition, station.getPosition()) &&
+                            distToStation < distanceToNearestStation) {
+                        nearestStation = station;
+                        distanceToNearestStation = distToStation;
+                        directionUtilityGain = map.stationUtility(station);
                     }
+                }
 
                 // any direction where we gain coins is a safe direction
                 if (directionUtilityGain >= 0)
-                    safeDirectionsStateful.put(dir,
-                            new DirectionOption(map.distanceBetweenPoints(nextPosition, targetPos), idealDirection));
+                    safeDirectionsStateful.put(dir, map.distanceBetweenPoints(nextPosition, targetPos));
 
                 // keep track of maximum coin profit
                 if (directionUtilityGain > maxGain) {
                     maxGain = directionUtilityGain;
                     choice = dir;
-                    chosenStations = new HashSet<>(nextStations);
+                    chosenStation = nearestStation;
                 }
             }
 
         // all directions are neutral
         if (maxGain == 0)
-            return closestSafeDirection(safeDirectionsStateful, false);
+            return closestSafeDirection(safeDirectionsStateful);
 
-        // no safe directions available, pick the best direction among the worst
-        if (safeDirectionsStateful.isEmpty()) {
-            charge(chosenStations, map);
-            return choice;
-        }
-
-        // direction bringing maximum profit also does not charge from any negative stations, perfect!
-        if (safeDirectionsStateful.get(choice).isIdeal) {
-            charge(chosenStations, map);
-            return choice;
-        }
-
-        // check to see if we can avoid charging from negative stations at all while getting closer to target
-        Direction closestSafeIdealDir = closestSafeDirection(safeDirectionsStateful, true);
-        if (closestSafeIdealDir != null &&
-                map.distanceBetweenPoints(currentPos.nextPosition(closestSafeIdealDir), targetPos) <
-                        map.distanceBetweenPoints(currentPos, targetPos))
-            return closestSafeIdealDir;
-
-        // choice not ideal (charges from negative stations), but we have not found a better option
-        charge(chosenStations, map);
+        assert chosenStation != null;
+        chargeFromStation(chosenStation, map);
         return choice;
-    }
-
-    // wraps together, for the HashMap, the distance to target and whether direction is ideal (no negative stations)
-    static class DirectionOption {
-        private double distance;
-        private boolean isIdeal;
-
-        DirectionOption(double distance, boolean ideal) {
-            this.distance = distance;
-            this.isIdeal = ideal;
-        }
     }
 }

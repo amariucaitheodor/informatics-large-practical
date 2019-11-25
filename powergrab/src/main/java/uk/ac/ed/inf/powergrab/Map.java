@@ -22,12 +22,10 @@ class Map {
         this.mapStations = mapStations;
     }
 
-    List<Station> getUncollectedStations() {
-        return mapStations.stream().filter(s -> !collectedStations.contains(s)).collect(Collectors.toList());
-    }
-
     List<Station> getPositiveUncollectedStations() {
-        return getUncollectedStations().stream().filter(s -> s.getCoins() >= 0).collect(Collectors.toList());
+        List<Station> uncollectedStations =
+                mapStations.stream().filter(s -> !collectedStations.contains(s)).collect(Collectors.toList());
+        return uncollectedStations.stream().filter(s -> s.getCoins() >= 0).collect(Collectors.toList());
     }
 
     List<Station> getAllStations() {
