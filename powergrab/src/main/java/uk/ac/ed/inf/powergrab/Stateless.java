@@ -6,18 +6,12 @@ import java.util.Set;
 
 class Stateless extends Drone {
 
-    private Stateless(Position position, long seed) {
+    Stateless(Position position, long seed) {
         movesLeft = 250;
         this.power = 250;
         this.coins = 0;
         this.position = position;
         this.dirGenerator = new Random(seed);
-    }
-
-    static Drone createInstance(Position position, long seed, boolean submissionGeneration) {
-        if (instance == null || submissionGeneration)
-            instance = new Stateless(position, seed);
-        return instance;
     }
 
     private Direction randomSafeDirection(Set<Direction> safeDirections) {

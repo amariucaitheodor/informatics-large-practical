@@ -16,10 +16,8 @@ class Map {
         collectedStations = new HashSet<>();
 
         // extract stations from GeoJson Features
-        List<Station> mapStations = new ArrayList<>();
-        mapStationsAsFeatures.forEach(featureStation -> mapStations.add(new Station(featureStation)));
-
-        this.mapStations = mapStations;
+        this.mapStations = new ArrayList<>();
+        mapStationsAsFeatures.forEach(featureStation -> this.mapStations.add(new Station(featureStation)));
     }
 
     List<Station> getPositiveUncollectedStations() {

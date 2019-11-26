@@ -19,17 +19,17 @@ public class DroneTest {
 
     @Test
     public void testOnlyOneDroneInstance() {
-        Drone drone1 = Stateless.createInstance(new Position(55.944425, -3.188396), 5678, false);
-        Drone drone2 = Stateless.createInstance(new Position(55.944425, -3.188396), 5678, false);
+        Drone drone1 = new Stateless(new Position(55.944425, -3.188396), 5678);
+        Drone drone2 = new Stateless(new Position(55.944425, -3.188396), 5678);
         assertEquals(drone1, drone2);
-        assertEquals(drone2, Stateless.createInstance(new Position(55.944425, -3.188396), 5678, false));
+        assertEquals(drone2, new Stateless(new Position(55.944425, -3.188396), 5678));
     }
     
     @Test
 	public void testRunOutOfPower() {
 		Random dirGenerator = new Random();
     	// Initialize drone with 50 power because this is a rare event that a drone runs out of power
-    	Drone testDrone = Stateless.createInstance(new Position(55.944425, -3.188396), 5678, false);
+    	Drone testDrone =new Stateless(new Position(55.944425, -3.188396), 5678);
     	while(testDrone.hasMovesLeft() && testDrone.hasPower())
         {
             Direction dir = Direction.randomDirection(dirGenerator);

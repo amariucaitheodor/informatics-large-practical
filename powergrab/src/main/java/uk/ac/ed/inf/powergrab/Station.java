@@ -8,7 +8,7 @@ import java.util.List;
 class Station {
     private double coins;
     private double power;
-    private Position position;
+    private final Position position;
 
     Station(Feature station) {
         this.coins = station.getNumberProperty("coins").doubleValue();

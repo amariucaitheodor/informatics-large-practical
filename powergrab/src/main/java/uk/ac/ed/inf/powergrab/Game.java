@@ -25,7 +25,7 @@ class Game {
     private Map map;
 
     Game(long seed, FeatureCollection mapStationsAsCollection, Position initialDronePos,
-         String droneType, String year, String month, String day, boolean submissionGeneration)
+         String droneType, String year, String month, String day)
             throws FileNotFoundException, UnsupportedEncodingException {
         if (!droneType.equals("stateless") && !droneType.equals("stateful"))
             throw new java.lang.IllegalArgumentException(String.format("Unrecognized drone type %s", droneType));
@@ -46,42 +46,36 @@ class Game {
         map = new Map(mapStationsAsFeatures);
 
         drone = droneType.equals("stateful") ?
-                Stateful.createInstance(initialDronePos, seed, submissionGeneration, map) :
-                Stateless.createInstance(initialDronePos, seed, submissionGeneration);
+                new Stateful(initialDronePos, seed, map) :
+                new Stateless(initialDronePos, seed);
     }
 
     // this will optimize the runtime of the application by storing precalculated trigonometric shits in position
     static void precomputeMovementShift() {
         // We first consider right-angled triangles with hypotenuse Game.moveDist, width latMove, and height longMove when travelling NNE, NE or ENE (the first quadrant).
         Position.moveShift.put(Direction.N, new double[]{Game.MOVEDIST, 0});
-        Position.moveShift.put(Direction.NNE, new double[]{Game.MOVEDIST * Math.sin(Math.toRadians(67.5)),
-                Game.MOVEDIST * Math.cos(Math.toRadians(67.5))});
-        Position.moveShift.put(Direction.NE, new double[]{Game.MOVEDIST * Math.sin(Math.toRadians(45)),
-                Game.MOVEDIST * Math.cos(Math.toRadians(45))});
-        Position.moveShift.put(Direction.ENE, new double[]{Game.MOVEDIST * Math.sin(Math.toRadians(22.5)),
-                Game.MOVEDIST * Math.cos(Math.toRadians(22.5))});
+        final double sin67_5 = Game.MOVEDIST * Math.sin(Math.toRadians(67.5));
+        final double cos67_5 = Game.MOVEDIST * Math.cos(Math.toRadians(67.5));
+        Position.moveShift.put(Direction.NNE, new double[]{sin67_5, cos67_5});
+        final double sin45 = Game.MOVEDIST * Math.sin(Math.toRadians(45));
+        final double cos45 = Game.MOVEDIST * Math.cos(Math.toRadians(45));
+        Position.moveShift.put(Direction.NE, new double[]{sin45, cos45});
+        final double sin22_5 = Game.MOVEDIST * Math.sin(Math.toRadians(22.5));
+        final double cos22_5 = Game.MOVEDIST * Math.cos(Math.toRadians(22.5));
+        Position.moveShift.put(Direction.ENE, new double[]{sin22_5, cos22_5});
         Position.moveShift.put(Direction.E, new double[]{0, Game.MOVEDIST});
         // If the drone was instead heading South or West, the latitude or longitude of the drone’s position would be decreasing, so we would instead subtract the heights and widths of similar triangles.
-        Position.moveShift.put(Direction.ESE, new double[]{-Game.MOVEDIST * Math.sin(Math.toRadians(22.5)),
-                Game.MOVEDIST * Math.cos(Math.toRadians(22.5))});
-        Position.moveShift.put(Direction.SE, new double[]{-Game.MOVEDIST * Math.sin(Math.toRadians(45)),
-                Game.MOVEDIST * Math.cos(Math.toRadians(45))});
-        Position.moveShift.put(Direction.SSE, new double[]{-Game.MOVEDIST * Math.sin(Math.toRadians(67.5)),
-                Game.MOVEDIST * Math.cos(Math.toRadians(67.5))});
+        Position.moveShift.put(Direction.ESE, new double[]{-sin22_5, cos22_5});
+        Position.moveShift.put(Direction.SE, new double[]{-sin45, cos45});
+        Position.moveShift.put(Direction.SSE, new double[]{-sin67_5, cos67_5});
         Position.moveShift.put(Direction.S, new double[]{-Game.MOVEDIST, 0});
-        Position.moveShift.put(Direction.SSW, new double[]{-Game.MOVEDIST * Math.sin(Math.toRadians(67.5)),
-                -Game.MOVEDIST * Math.cos(Math.toRadians(67.5))});
-        Position.moveShift.put(Direction.SW, new double[]{-Game.MOVEDIST * Math.sin(Math.toRadians(45)),
-                -Game.MOVEDIST * Math.cos(Math.toRadians(45))});
-        Position.moveShift.put(Direction.WSW, new double[]{-Game.MOVEDIST * Math.sin(Math.toRadians(22.5)),
-                -Game.MOVEDIST * Math.cos(Math.toRadians(22.5))});
+        Position.moveShift.put(Direction.SSW, new double[]{-sin67_5, -cos67_5});
+        Position.moveShift.put(Direction.SW, new double[]{-sin45, -cos45});
+        Position.moveShift.put(Direction.WSW, new double[]{-sin22_5, -cos22_5});
         Position.moveShift.put(Direction.W, new double[]{0, -Game.MOVEDIST});
-        Position.moveShift.put(Direction.WNW, new double[]{Game.MOVEDIST * Math.sin(Math.toRadians(22.5)),
-                -Game.MOVEDIST * Math.cos(Math.toRadians(22.5))});
-        Position.moveShift.put(Direction.NW, new double[]{Game.MOVEDIST * Math.sin(Math.toRadians(45)),
-                -Game.MOVEDIST * Math.cos(Math.toRadians(45))});
-        Position.moveShift.put(Direction.NNW, new double[]{Game.MOVEDIST * Math.sin(Math.toRadians(67.5)),
-                -Game.MOVEDIST * Math.cos(Math.toRadians(67.5))});
+        Position.moveShift.put(Direction.WNW, new double[]{sin22_5, -cos22_5});
+        Position.moveShift.put(Direction.NW, new double[]{sin45, -cos45});
+        Position.moveShift.put(Direction.NNW, new double[]{sin67_5,-cos67_5});
     }
 
     void play() {

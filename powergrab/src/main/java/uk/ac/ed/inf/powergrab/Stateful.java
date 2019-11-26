@@ -8,7 +8,7 @@ class Stateful extends Drone {
     // 'target' variable keeps track of the drone's desired station to be reached next
     private Station target;
 
-    private Stateful(Position position, long seed, Map map) {
+    Stateful(Position position, long seed, Map map) {
         movesLeft = 250;
         trace = new LinkedList<>();
         trace.add(position);
@@ -17,12 +17,6 @@ class Stateful extends Drone {
         this.position = position;
         this.dirGenerator = new Random(seed);
         this.target = closestPositiveUncollectedStation(position, map);
-    }
-
-    static Drone createInstance(Position position, long seed, boolean submissionGeneration, Map map) {
-        if (instance == null || submissionGeneration)
-            instance = new Stateful(position, seed, map);
-        return instance;
     }
 
     @Override

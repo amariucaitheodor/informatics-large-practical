@@ -25,7 +25,7 @@ class App {
         String mapSource = readFromURL(mapStationsURL);
         FeatureCollection mapStations = FeatureCollection.fromJson(mapSource);
 
-        new Game(seed, mapStations, initialDronePos, droneType, year, month, day, false).play();
+        new Game(seed, mapStations, initialDronePos, droneType, year, month, day).play();
 
 //        generateResultFiles(true);
     }
@@ -75,12 +75,12 @@ class App {
                     totalCollected += perfectScore;
 
                     Game stateless = new Game(5678, FeatureCollection.fromJson(mapSource), initialDronePos,
-                            "stateless", yearStr, monthStr, dayStr, true);
+                            "stateless", yearStr, monthStr, dayStr);
                     stateless.play();
                     statelessCollected += stateless.getGameScore();
 
                     Game stateful = new Game(5678, FeatureCollection.fromJson(mapSource), initialDronePos,
-                            "stateful", yearStr, monthStr, dayStr, true);
+                            "stateful", yearStr, monthStr, dayStr);
                     stateful.play();
                     double statefulError = Math.abs(stateful.getGameScore() - perfectScore);
                     statefulCollected += stateful.getGameScore();

@@ -1,11 +1,11 @@
 package uk.ac.ed.inf.powergrab;
 
-import java.util.HashMap;
+import java.util.EnumMap;
 
 class Position {
     // moveShift pre-calculates the shifts in latitude and longitude (double) represented by each of the 16 directions
     // this is done in the Game class at program initialization
-    static final HashMap<Direction, double[]> moveShift = new HashMap<>();
+    static final EnumMap<Direction, double[]> moveShift = new EnumMap<>(Direction.class);
     final double latitude;
     final double longitude;
 

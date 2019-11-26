@@ -2,65 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72beab27-f20b-427a-a676-02794a10d2c1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../evaluator/report.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/../evaluator/report.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateful-01-01-2019.geojson" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateful-01-01-2019.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateful-02-02-2019.geojson" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateful-02-02-2019.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateful-03-03-2019.geojson" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateful-03-03-2019.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateful-04-04-2019.geojson" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateful-04-04-2019.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateful-05-05-2019.geojson" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateful-05-05-2019.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateful-06-06-2019.geojson" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateful-06-06-2019.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateful-07-07-2019.geojson" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateful-07-07-2019.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateful-08-08-2019.geojson" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateful-08-08-2019.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateful-09-09-2019.geojson" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateful-09-09-2019.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateful-10-10-2019.geojson" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateful-10-10-2019.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateful-11-11-2019.geojson" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateful-11-11-2019.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateful-12-12-2019.geojson" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateful-12-12-2019.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateless-01-01-2019.geojson" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateless-01-01-2019.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateless-02-02-2019.geojson" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateless-02-02-2019.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateless-03-03-2019.geojson" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateless-03-03-2019.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateless-04-04-2019.geojson" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateless-04-04-2019.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateless-05-05-2019.geojson" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateless-05-05-2019.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateless-06-06-2019.geojson" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateless-06-06-2019.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateless-07-07-2019.geojson" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateless-07-07-2019.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateless-08-08-2019.geojson" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateless-08-08-2019.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateless-09-09-2019.geojson" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateless-09-09-2019.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateless-10-10-2019.geojson" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateless-10-10-2019.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateless-11-11-2019.geojson" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateless-11-11-2019.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateless-12-12-2019.geojson" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ilp-results/stateless-12-12-2019.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/ed/inf/powergrab/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/ed/inf/powergrab/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/ed/inf/powergrab/Drone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/ed/inf/powergrab/Drone.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/ed/inf/powergrab/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/ed/inf/powergrab/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/ed/inf/powergrab/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/ed/inf/powergrab/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/ed/inf/powergrab/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/ed/inf/powergrab/Position.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/ed/inf/powergrab/Stateful.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/ed/inf/powergrab/Stateful.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/ed/inf/powergrab/Stateless.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/ed/inf/powergrab/Stateless.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/ed/inf/powergrab/Station.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/ed/inf/powergrab/Station.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../report/.~lock.Report.docx#" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uk/ac/ed/inf/powergrab/DroneTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uk/ac/ed/inf/powergrab/DroneTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stateful-12-08-2019.geojson" beforeDir="false" afterPath="$PROJECT_DIR$/stateful-12-08-2019.geojson" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stateful-12-08-2019.txt" beforeDir="false" afterPath="$PROJECT_DIR$/stateful-12-08-2019.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../report/Report.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../report/Report.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report/Report.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../report/Report.pdf" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -134,11 +89,11 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.powergrab">
+  <component name="RunManager" selected="JUnit.PositionTest">
     <configuration name="powergrab" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="uk.ac.ed.inf.powergrab.App" />
       <module name="powergrab" />
-      <option name="PROGRAM_PARAMETERS" value="12 08 2019 55.944425 -3.188396 5678 stateful" />
+      <option name="PROGRAM_PARAMETERS" value="12 08 2019 55.944425 -3.188396 5632 stateful" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -210,6 +165,10 @@
       <workItem from="1574445529243" duration="11186000" />
       <workItem from="1574503579695" duration="1243000" />
       <workItem from="1574690403303" duration="938000" />
+      <workItem from="1574706105251" duration="11624000" />
+      <workItem from="1574779816518" duration="2034000" />
+      <workItem from="1574782198459" duration="67000" />
+      <workItem from="1574782303251" duration="4576000" />
     </task>
     <servers />
   </component>
@@ -228,5 +187,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/uk/ac/ed/inf/powergrab/PositionTest.java</url>
+          <line>182</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

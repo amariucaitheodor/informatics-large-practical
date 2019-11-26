@@ -3,8 +3,6 @@ package uk.ac.ed.inf.powergrab;
 import java.util.Random;
 
 abstract class Drone {
-    // Singleton design pattern to ensure only one drone is used
-    static Drone instance = null;
     int movesLeft;
     double power;
     double coins;
