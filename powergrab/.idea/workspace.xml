@@ -2,22 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72beab27-f20b-427a-a676-02794a10d2c1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../evaluator/report.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/../evaluator/report.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.attach_pid10992" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.attach_pid19974" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.attach_pid21087" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.attach_pid28777" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/ed/inf/powergrab/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/ed/inf/powergrab/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/ed/inf/powergrab/Drone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/ed/inf/powergrab/Drone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/ed/inf/powergrab/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/ed/inf/powergrab/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/ed/inf/powergrab/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/ed/inf/powergrab/Map.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/ed/inf/powergrab/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/ed/inf/powergrab/Position.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/ed/inf/powergrab/Stateful.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/ed/inf/powergrab/Stateful.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/ed/inf/powergrab/Stateless.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/ed/inf/powergrab/Stateless.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/ed/inf/powergrab/Station.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/ed/inf/powergrab/Station.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/uk/ac/ed/inf/powergrab/DroneTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uk/ac/ed/inf/powergrab/DroneTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stateful-12-08-2019.geojson" beforeDir="false" afterPath="$PROJECT_DIR$/stateful-12-08-2019.geojson" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stateful-12-08-2019.txt" beforeDir="false" afterPath="$PROJECT_DIR$/stateful-12-08-2019.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stateful-12-08-2019.geojson" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stateful-12-08-2019.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report/.~lock.Report.docx#" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../report/Report.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../report/Report.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../report/Report.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../report/Report.pdf" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,11 +67,18 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
@@ -77,19 +86,7 @@
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="JUnit.PositionTest">
+  <component name="RunManager" selected="Application.powergrab">
     <configuration name="powergrab" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="uk.ac.ed.inf.powergrab.App" />
       <module name="powergrab" />
@@ -140,6 +137,18 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -168,7 +177,13 @@
       <workItem from="1574706105251" duration="11624000" />
       <workItem from="1574779816518" duration="2034000" />
       <workItem from="1574782198459" duration="67000" />
-      <workItem from="1574782303251" duration="4576000" />
+      <workItem from="1574782303251" duration="7689000" />
+      <workItem from="1574796668279" duration="169000" />
+      <workItem from="1574877615580" duration="6974000" />
+      <workItem from="1575116113497" duration="88000" />
+      <workItem from="1575121967351" duration="5770000" />
+      <workItem from="1575213719159" duration="309000" />
+      <workItem from="1575214698802" duration="515000" />
     </task>
     <servers />
   </component>
@@ -187,6 +202,52 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="100" y="127" width="1720" height="853" key="DiffContextDialog" timestamp="1575213608608">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="100" y="127" width="1720" height="853" key="DiffContextDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1575213608608" />
+    <state width="1856" height="269" key="GridCell.Tab.0.bottom" timestamp="1575215212744">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1856" height="269" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1575215212744" />
+    <state width="1856" height="269" key="GridCell.Tab.0.center" timestamp="1575215212744">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1856" height="269" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1575215212744" />
+    <state width="1856" height="269" key="GridCell.Tab.0.left" timestamp="1575215212743">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1856" height="269" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1575215212743" />
+    <state width="1856" height="269" key="GridCell.Tab.0.right" timestamp="1575215212744">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1856" height="269" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1575215212744" />
+    <state width="1856" height="332" key="GridCell.Tab.1.bottom" timestamp="1575213619548">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1856" height="332" key="GridCell.Tab.1.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1575213619548" />
+    <state width="1856" height="332" key="GridCell.Tab.1.center" timestamp="1575213619547">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1856" height="332" key="GridCell.Tab.1.center/0.27.1920.1053@0.27.1920.1053" timestamp="1575213619547" />
+    <state width="1856" height="332" key="GridCell.Tab.1.left" timestamp="1575213619547">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1856" height="332" key="GridCell.Tab.1.left/0.27.1920.1053@0.27.1920.1053" timestamp="1575213619547" />
+    <state width="1856" height="332" key="GridCell.Tab.1.right" timestamp="1575213619548">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1856" height="332" key="GridCell.Tab.1.right/0.27.1920.1053@0.27.1920.1053" timestamp="1575213619548" />
+    <state x="669" y="253" width="571" height="599" key="RollbackChangesDialog" timestamp="1575212477513">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="669" y="253" width="571" height="599" key="RollbackChangesDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1575212477513" />
+    <state x="623" y="255" width="672" height="687" key="search.everywhere.popup" timestamp="1575210019005">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="623" y="255" width="672" height="687" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1575210019005" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

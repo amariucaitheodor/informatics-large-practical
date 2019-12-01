@@ -15,7 +15,7 @@ class Stateful extends Drone {
         this.power = 250;
         this.coins = 0;
         this.position = position;
-        this.dirGenerator = new Random(seed);
+        this.randomDirGen = new Random(seed);
         this.target = closestPositiveUncollectedStation(position, map);
     }
 
@@ -29,10 +29,10 @@ class Stateful extends Drone {
 
     private Station randomStation(Map map) {
         int stationsNo = map.getAllStations().size();
-        return map.getAllStations().get(dirGenerator.nextInt(stationsNo));
+        return map.getAllStations().get(randomDirGen.nextInt(stationsNo));
     }
 
-    // if drone has been to the same position 3 times in its last 5 moves, then it's stuck and needs a new target
+    // if drone has been at the same position 3 times in its last 5 moves, then it is stuck
     private boolean isStuck() {
         HashMap<String, Integer> occurrences = new HashMap<>();
         trace.forEach(pos ->
@@ -52,24 +52,23 @@ class Stateful extends Drone {
     }
 
     private Position assessTargetPosition(Position currentPos, Map map) {
-        // with no positive uncollected stations left, game is over and target does not matter
-        if (map.getPositiveUncollectedStations().isEmpty())
+        if (map.getPositiveUncollectedStations().isEmpty())  //with no positive uncollected stations left, game is
+            // over and target does not matter
             return map.getAllStations().get(0).getPosition();
 
-        if (isStuck())
+        if (isStuck()) // drone is stuck so choose a random station as new target
             target = randomStation(map);
 
-        if (map.getCollectedStations().contains(target))
-            // target has just been collected, select a new one
+        if (map.getCollectedStations().contains(target)) // target has just been collected, select a new one
             return closestPositiveUncollectedStation(currentPos, map).getPosition();
-        else
+        else // keep target
             return target.getPosition();
     }
 
-    private Direction closestSafeDirection(EnumMap<Direction, Double> safeDirectionsStateful) {
+    private Direction safeDirectionClosestToTarget(EnumMap<Direction, Double> safeDirectionsStateful) {
         double distance = Integer.MAX_VALUE;
         Direction closestDirection = null;
-        // go through all safe directions and choose the closest one based on distance to target (stored in HashMap)
+        // go through all safe directions and choose the closest one based on distance to target (stored in EnumMap)
         for (java.util.Map.Entry<Direction, Double> safeDir : safeDirectionsStateful.entrySet())
             if (safeDir.getValue() < distance) {
                 distance = safeDir.getValue();
@@ -118,7 +117,7 @@ class Stateful extends Drone {
 
         // all directions are neutral
         if (maxGain == 0)
-            return closestSafeDirection(safeDirectionsStateful);
+            return safeDirectionClosestToTarget(safeDirectionsStateful);
 
         assert chosenStation != null;
         chargeFromStation(chosenStation, map);

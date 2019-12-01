@@ -25,9 +25,9 @@ class App {
         String mapSource = readFromURL(mapStationsURL);
         FeatureCollection mapStations = FeatureCollection.fromJson(mapSource);
 
-        new Game(seed, mapStations, initialDronePos, droneType, year, month, day).play();
+        //new Game(seed, mapStations, initialDronePos, droneType, year, month, day).play();
 
-//        generateResultFiles(true);
+        generateResultFiles(true);
     }
 
     private static String readFromURL(String givenURL) throws IOException {

@@ -11,13 +11,13 @@ class Stateless extends Drone {
         this.power = 250;
         this.coins = 0;
         this.position = position;
-        this.dirGenerator = new Random(seed);
+        this.randomDirGen = new Random(seed);
     }
 
     private Direction randomSafeDirection(Set<Direction> safeDirections) {
-        Direction choice = Direction.randomDirection(dirGenerator);
+        Direction choice = Direction.randomDirection(randomDirGen);
         while (!getPosition().nextPosition(choice).inPlayArea() || !safeDirections.contains(choice)) {
-            choice = Direction.randomDirection(dirGenerator);
+            choice = Direction.randomDirection(randomDirGen);
         }
         return choice;
     }
@@ -63,6 +63,7 @@ class Stateless extends Drone {
         if (maxGain == 0)
             return randomSafeDirection(safeDirections);
 
+        // either we pick the best choice among the worst when maxGain<0, or just the best choice overall when maxGain>0
         assert chosenStation != null;
         chargeFromStation(chosenStation, map);
         return choice;

@@ -7,7 +7,7 @@ abstract class Drone {
     double power;
     double coins;
     Position position;
-    Random dirGenerator;
+    Random randomDirGen;
 
     double getPower() {
         return power;
