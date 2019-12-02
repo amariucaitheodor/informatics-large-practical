@@ -4,16 +4,16 @@ import java.util.Random;
 
 abstract class Drone {
     int movesLeft;
-    double power;
-    double coins;
+    float power;
+    float coins;
     Position position;
     Random randomDirGen;
 
-    double getPower() {
+    float getPower() {
         return power;
     }
 
-    double getCoins() {
+    float getCoins() {
         return coins;
     }
 

@@ -14,9 +14,9 @@ import java.util.List;
 class Game {
     static final double RANGEDIST = 0.00025;
     static final double MOVEPOWERCOST = 1.25;
-    static final double POWERWEIGHT = 0.35;
-    static final double COINSWEIGHT = 1 - POWERWEIGHT;
     private static final double MOVEDIST = 0.0003;
+    static final float POWERWEIGHT = 0.35f;
+    static final float COINSWEIGHT = 1 - POWERWEIGHT;
     private final List<Feature> mapStationsAsFeatures;
     private PrintWriter moveChoiceWriter;
     private PrintWriter mapPathWriter;

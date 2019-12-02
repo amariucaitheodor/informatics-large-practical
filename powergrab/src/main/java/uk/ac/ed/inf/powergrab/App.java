@@ -25,9 +25,9 @@ class App {
         String mapSource = readFromURL(mapStationsURL);
         FeatureCollection mapStations = FeatureCollection.fromJson(mapSource);
 
-        //new Game(seed, mapStations, initialDronePos, droneType, year, month, day).play();
+        new Game(seed, mapStations, initialDronePos, droneType, year, month, day).play();
 
-        generateResultFiles(true);
+//        generateResultFiles(true);
     }
 
     private static String readFromURL(String givenURL) throws IOException {
@@ -56,7 +56,7 @@ class App {
         int mapsTested = 0;
         int statefulCollected = 0;
         int statelessCollected = 0;
-        int totalCollected = 0;
+        int totalCoins = 0;
 
         int yearEnd = forSubmission ? 2019 : 2020;
         for (int year = 2019; year <= yearEnd; year++) {
@@ -72,7 +72,7 @@ class App {
                             yearStr + "/" + monthStr + "/" + dayStr + "/powergrabmap.geojson";
                     String mapSource = readFromURL(mapStationsURL);
                     double perfectScore = mapPerfectScore(FeatureCollection.fromJson(mapSource));
-                    totalCollected += perfectScore;
+                    totalCoins += perfectScore;
 
                     Game stateless = new Game(5678, FeatureCollection.fromJson(mapSource), initialDronePos,
                             "stateless", yearStr, monthStr, dayStr);
@@ -105,8 +105,8 @@ class App {
         }
         System.out.println("Maps tested: " + mapsTested);
         System.out.println(String.format("Percentage of coins collected on %s maps, stateful: ",
-                forSubmission ? "submission" : "all") + (statefulCollected * 100 / totalCollected));
+                forSubmission ? "submission" : "all") + (statefulCollected * 100 / totalCoins));
         System.out.println(String.format("Percentage of coins collected on %s maps, stateless: ",
-                forSubmission ? "submission" : "all") + (statelessCollected * 100 / totalCollected));
+                forSubmission ? "submission" : "all") + (statelessCollected * 100 / totalCoins));
     }
 }

@@ -6,13 +6,13 @@ import com.mapbox.geojson.Point;
 import java.util.List;
 
 class Station {
-    private double coins;
-    private double power;
+    private float coins;
+    private float power;
     private final Position position;
 
     Station(Feature station) {
-        this.coins = station.getNumberProperty("coins").doubleValue();
-        this.power = station.getNumberProperty("power").doubleValue();
+        this.coins = station.getNumberProperty("coins").floatValue();
+        this.power = station.getNumberProperty("power").floatValue();
 
         Point stationPoint = (Point) station.geometry();
         assert stationPoint != null;
@@ -20,11 +20,11 @@ class Station {
         this.position = new Position(stationCoords.get(1), stationCoords.get(0));
     }
 
-    double getCoins() {
+    float getCoins() {
         return coins;
     }
 
-    double getPower() {
+    float getPower() {
         return power;
     }
 

@@ -59,7 +59,7 @@ class Stateless extends Drone {
                 }
             }
 
-        // all directions are neutral
+        // choice is between neutral directions and negative directions
         if (maxGain == 0)
             return randomSafeDirection(safeDirections);
 
