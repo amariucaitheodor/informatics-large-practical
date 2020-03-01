@@ -6,3 +6,5 @@ module with the command "pip install xlsxwriter" or similar.
 Place powergrab.jar in ../out/artifacts/powergrab.jar.  
 
 Results are written to report.xlsx.
+
+Evaluator author: Bora Alper
